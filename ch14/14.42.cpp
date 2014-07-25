@@ -11,6 +11,7 @@ using std::vector;
 using std::string;
 
 int funcA(vector<int> &v){
+    //size_t count = std::count_if(v.begin(), v.end(), std::bind2nd(std::greater<int>(), 1024));   //C++ 98
     size_t count = std::count_if(v.begin(), v.end(), std::bind(std::greater<int>(), std::placeholders::_1, 1024));
     return static_cast<int>(count);
 }
